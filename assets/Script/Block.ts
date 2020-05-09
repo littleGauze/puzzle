@@ -23,9 +23,9 @@ export default class Block extends cc.Component {
   }
 
   onDestroy() {
-    this.node.on('touchstart', this._onStart, this)
-    this.node.on('touchmove', this._onMove, this)
-    this.node.on('touchend', this._onEnd, this)
+    this.node.off('touchstart', this._onStart, this)
+    this.node.off('touchmove', this._onMove, this)
+    this.node.off('touchend', this._onEnd, this)
   }
 
   public init(texture: cc.Texture2D , pos: Pos): void {
